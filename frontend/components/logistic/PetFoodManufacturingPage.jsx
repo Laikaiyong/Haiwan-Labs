@@ -14,7 +14,6 @@ const petFoodData = [
   {
     id: 1,
     name: 'Chicken Delight',
-    manufacturer: 'PetNutrition Co.',
     ingredients: 'Surplus chicken, rice, vegetables',
     status: 'Completed',
     stages: [
@@ -27,7 +26,6 @@ const petFoodData = [
   {
     id: 2,
     name: 'Fish Feast',
-    manufacturer: 'OceanPet Foods',
     ingredients: 'Surplus fish, sweet potatoes, peas',
     status: 'In Progress',
     stages: [
@@ -40,7 +38,6 @@ const petFoodData = [
   {
     id: 3,
     name: 'Veggie Bites',
-    manufacturer: 'GreenPaw Inc.',
     ingredients: 'Surplus vegetables, lentils, brown rice',
     status: 'Testing',
     stages: [
@@ -87,8 +84,6 @@ function PetFoodCard({ product }) {
           {product.status}
         </Badge>
       </Group>
-
-      <Text><strong>Manufacturer:</strong> {product.manufacturer}</Text>
       <Text><strong>Ingredients:</strong> {product.ingredients}</Text>
 
       <Accordion variant="contained" radius="md" mt="md">
