@@ -10,11 +10,10 @@ export function HeroSection() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            A <span className={classes.highlight}>modern</span> React <br /> components library
+            <span className={classes.highlight}>Haiwan</span> Lab
           </Title>
           <Text c="dimmed" mt="md">
-            Build fully functional accessible web applications faster than ever – Mantine includes
-            more than 120 customizable components and hooks to cover you in any situation
+            Revolutionizing the way we take care of pets
           </Text>
 
           <List
@@ -22,30 +21,32 @@ export function HeroSection() {
             spacing="sm"
             size="sm"
             icon={
-              <ThemeIcon size={20} radius="xl">
+              <ThemeIcon size={20} radius="xl" className={classes.orangebackground}>
                 <IconCheck style={{ width: rem(12), height: rem(12) }} stroke={1.5} />
               </ThemeIcon>
             }
           >
             <List.Item>
-              <b>TypeScript based</b> – build type safe applications, all components and hooks
-              export types
+              Reduce Food waste by <b>~58,000 KG</b> by <b>2030</b>
             </List.Item>
             <List.Item>
-              <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-              any project
+            1st Petfood company that utilizes <b>Solana Web3</b>
             </List.Item>
             <List.Item>
-              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-              keyboard
+            Providing pet food options with <b>lower carbon emissions</b>
             </List.Item>
           </List>
 
           <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
+            <Button radius="xl" size="md" className={[classes.control, classes.orangebackground]}>
               Get started
             </Button>
-            <Button variant="default" radius="xl" size="md" className={classes.control}>
+            <Button variant="default" radius="xl" onClick={() => {
+              window.open(
+                'https://github.com/Laikaiyong/Haiwan-Labs',
+                '_blank' // <- This is what makes it open in a new window.
+              );
+            }}  size="md" className={classes.control}>
               Source code
             </Button>
           </Group>

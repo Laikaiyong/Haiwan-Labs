@@ -3,7 +3,7 @@ import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Inter } from "next/font/google";
 import { Wallet } from './providers';
-import { NavbarSimple } from '../../components/Sidebar';
+import { ResponsiveSidebar } from '../../components/Sidebar';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,14 +21,14 @@ export const metadata = {
 	openGraph: {
 		title: "Haiwan Lab",
 		description: "Solving Food Waste Issues to Pet Food Manufacturing with Blockchain",
-		images: ["/logo.jpeg"],
+		images: ["/haiwanlab.jpg"],
 	},
 	twitter: {
 		card: "summary",
 		site: "Haiwan Lab",
 		title: "Haiwan Lab",
 		description: "Solving Food Waste Issues to Pet Food Manufacturing with Blockchain",
-		images: ["/logo.jpeg"],
+		images: ["/haiwanlab.jpg"],
 	},
 };
 
@@ -47,7 +47,7 @@ export default function RootLayout({
             <div style={{ display: 'flex', height: "100%" }}>
               <div style={{ flex: '0 0 25%', maxWidth: '25%' }}>
                 {/* Sidebar content */}
-          < NavbarSimple />
+          <ResponsiveSidebar />
               </div>
               <div style={{ flex: '1' }}>
                 {/* Main content */}

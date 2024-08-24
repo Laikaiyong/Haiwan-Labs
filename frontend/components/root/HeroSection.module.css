@@ -34,6 +34,10 @@
       flex: 1;
     }
   }
+
+  .orangebackground {
+    background-color: var(--mantine-color-orange-8);
+  }
   
   .image {
     width: rem(376px);
@@ -46,7 +50,7 @@
   
   .highlight {
     position: relative;
-    background-color: var(--mantine-color-blue-light);
+    background-color: var(--mantine-color-orange-light);
     border-radius: var(--mantine-radius-sm);
     padding: rem(4px) rem(12px);
   }

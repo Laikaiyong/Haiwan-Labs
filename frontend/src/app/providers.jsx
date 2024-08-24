@@ -31,6 +31,9 @@ import {
   SolflareWalletAdapter,
   NightlyWalletAdapter,
   SafePalWalletAdapter,
+  SalmonWalletAdapter,
+  TokenPocketWalletAdapter,
+  TokenaryWalletAdapter
 } from "@solana/wallet-adapter-wallets";
 import {
   WalletModalProvider,
@@ -89,6 +92,9 @@ export const Wallet = ({
       new SolflareWalletAdapter(),
       new NightlyWalletAdapter(),
       new SafePalWalletAdapter(),
+      new SalmonWalletAdapter(),
+      new TokenPocketWalletAdapter(),
+      new TokenaryWalletAdapter(),
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]
