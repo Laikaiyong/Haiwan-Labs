@@ -10,6 +10,7 @@ import {
   IconBuildingFactory2,
   IconUser,
   IconMenu2,
+  IconShoppingBag,
 } from "@tabler/icons-react";
 import { WalletMultiButton, WalletDisconnectButton } from "@solana/wallet-adapter-react-ui";
 import classes from "./Sidebar.module.css";
@@ -17,6 +18,7 @@ import { Image } from "@mantine/core";
 
 const userData = [
   { link: "/", label: "Dashboard", icon: IconDashboard },
+  { link: "/purchase", label: "Purchase", icon: IconShoppingBag },
   { link: "/profile", label: "Profile", icon: IconFingerprint },
 ];
 
