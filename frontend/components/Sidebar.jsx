@@ -62,7 +62,7 @@ export function ResponsiveNavbar() {
           <div className={classes.inner}>
             <div className={classes.logoSection}>
               <Image radius="md" w={100} src="/logo.jpeg" />
-              <Code fw={200}>v1.0.0</Code>
+              {/* <Code fw={200}>v1.0.0</Code> */}
             </div>
             <Group className={classes.links} spacing={5}>
               {links}
