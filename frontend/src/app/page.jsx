@@ -10,7 +10,7 @@ export default function Home() {
       <Image
         radius="md"
         style={{ width: "100%" }}
-        h={window.innerWidth < 768 ? 400 : 600}
+        h={typeof window !== 'undefined' && window.innerWidth < 768 ? 400 : 600}
         src="./haiwanlab.jpg"
       />
       <div style={{ margin: "5%" }}>
