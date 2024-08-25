@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import { Group, Code, Button, Burger, Drawer, ScrollArea, rem } from "@mantine/core";
+import { Group, Code, Button, Burger, Container, Collapse, Box } from "@mantine/core";
 import { useDisclosure } from '@mantine/hooks';
 import {
   IconDashboard,
@@ -9,11 +9,10 @@ import {
   IconFingerprint,
   IconBuildingFactory2,
   IconUser,
-  IconMenu2,
   IconShoppingBag,
 } from "@tabler/icons-react";
 import { WalletMultiButton, WalletDisconnectButton } from "@solana/wallet-adapter-react-ui";
-import classes from "./Sidebar.module.css";
+import classes from "./Navbar.module.css";
 import { Image } from "@mantine/core";
 
 const userData = [
@@ -27,10 +26,10 @@ const companyData = [
     { link: "/logistic", label: "Logistic", icon: IconTruckLoading },
 ];
 
-export function ResponsiveSidebar() {
+export function ResponsiveNavbar() {
   const [userRole, setUserRole] = useState("User");
   const [active, setActive] = useState("");
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, { toggle }] = useDisclosure(false);
 
   useEffect(() => {
     let value = localStorage.getItem("userRole") || "User";
@@ -49,56 +48,47 @@ export function ResponsiveSidebar() {
         event.preventDefault();
         window.location.href = item.link;
         setActive(item.label);
-        close();
+        toggle(); // Close the mobile menu when a link is clicked
       }}>
       <item.icon className={classes.linkIcon} stroke={1.5} />
       <span>{item.label}</span>
     </a>
   ));
 
-  const sidebar = (
-    <>
-      <div className={classes.navbarMain}>
-        <Group className={classes.header} justify="space-between">
-          <Image radius="md" w={100} src="/logo.jpeg" />
-          <Code fw={200}>v1.0.0</Code>
-        </Group>
-        <div style={{marginLeft: 20}}>
-
-        <Toggle userRole={userRole} setUserRole={setUserRole} />
-        </div>
-        {links}
-      </div>
-
-      <div className={classes.footer}>
-        <div className={classes.link}>
-          <WalletMultiButton />
-        </div>
-        <div className={classes.link}>
-          <WalletDisconnectButton />
-        </div>
-      </div>
-    </>
-  );
-
   return (
-    <>
-      <Burger opened={opened} onClick={open} className={classes.burger} size="sm" />
-      <Drawer
-        opened={opened}
-        onClose={close}
-        size="100%"
-        padding="md"
-        title=""
-        className={classes.hiddenDesktop}
-        zIndex={1000000}
-      >
-        <ScrollArea h={`calc(100vh - ${rem(60)})`} mx="-md">
-          {sidebar}
-        </ScrollArea>
-      </Drawer>
-      <nav className={classes.navbar}>{sidebar}</nav>
-    </>
+    <Box className={classes.root}>
+      <header className={classes.header}>
+        <Container size="xl">
+          <div className={classes.inner}>
+            <div className={classes.logoSection}>
+              <Image radius="md" w={100} src="/logo.jpeg" />
+              <Code fw={200}>v1.0.0</Code>
+            </div>
+            <Group className={classes.links} spacing={5}>
+              {links}
+            </Group>
+            <Group className={`${classes.rightSection}, ${classes.links}`}>
+              <Toggle userRole={userRole} setUserRole={setUserRole} />
+              <WalletMultiButton />
+              <WalletDisconnectButton />
+            </Group>
+            <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+          </div>
+        </Container>
+      </header>
+      <Container size="xl" p={0}>
+        <Collapse in={opened}>
+          <div className={classes.dropdown}>
+            {links}
+            <Group mt="md">
+              <Toggle userRole={userRole} setUserRole={setUserRole} />
+              <WalletMultiButton />
+              <WalletDisconnectButton />
+            </Group>
+          </div>
+        </Collapse>
+      </Container>
+    </Box>
   );
 }
 
@@ -111,10 +101,10 @@ function Toggle({ userRole, setUserRole }) {
 
   return (
     <Button
-    color="indigo"
+      color="indigo"
       onClick={handleRoleChange}
       className={classes.toggleButton}
-      lefticon={userRole === "User" ? <IconUser size={20} /> : <IconBuildingFactory2 size={20} />}
+      leftIcon={userRole === "User" ? <IconUser size={20} /> : <IconBuildingFactory2 size={20} />}
     >
       {userRole}
     </Button>

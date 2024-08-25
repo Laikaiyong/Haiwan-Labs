@@ -81,8 +81,8 @@ const PetFoodSalesPage = () => {
                   </Card.Section>
                   <Text weight={500} mt="md">{food.name}</Text>
                   <Text size="sm" c="dimmed">{food.sol} SOL</Text>
-                  <Button color='indigo' onClick={() => handleSolanaTransaction(food.sol)} fullWidth mt="sm">
-                    Buy Now
+                  <Button color='indigo' fullWidth mt="sm">
+                    Publish Product
                   </Button>
                 </Card>
               </Grid.Col>

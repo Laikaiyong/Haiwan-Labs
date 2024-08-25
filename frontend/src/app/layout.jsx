@@ -1,11 +1,10 @@
 import '@mantine/core/styles.css';
+import "@fontsource/jua"
 
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider, createTheme } from '@mantine/core';
 import { Inter } from "next/font/google";
 import { Wallet } from './providers';
-import { ResponsiveSidebar } from '../../components/Sidebar';
-
-const inter = Inter({ subsets: ["latin"] });
+import { ResponsiveNavbar } from '../../components/Sidebar';
 
 export const metadata = {
   title: "Haiwan Lab",
@@ -32,6 +31,11 @@ export const metadata = {
 	},
 };
 
+const theme = createTheme({
+  fontFamily: 'Jua',
+  headings: { fontFamily: 'Jua' },
+});
+
 export default function RootLayout({
   children,
 }) {
@@ -40,20 +44,17 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className={inter.className}>
-        <MantineProvider>
+      <body>
+        <MantineProvider theme={theme}>
         <Wallet>
           <div>
-            <div style={{ display: 'flex', height: "100%" }}>
-              <div style={{ flex: '0 0 25%', maxWidth: '25%' }}>
                 {/* Sidebar content */}
-          <ResponsiveSidebar />
-              </div>
-              <div style={{ flex: '1' }}>
+          <ResponsiveNavbar />
                 {/* Main content */}
+                <div>
+
         {children}
-              </div>
-            </div>
+                </div>
           </div>
         </Wallet>
         </MantineProvider>

@@ -1307,6 +1307,11 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.7.tgz"
   integrity sha512-X8R8Oj771YRl/w+c1HqAC1szL8zWQRwFvgDwT129k9ACdBoud/+/rX9V0qiMl6LWUdP9voC2nDVZYPMQQsb6eA==
 
+"@fontsource/jua@^5.0.20":
+  version "5.0.20"
+  resolved "https://registry.npmjs.org/@fontsource/jua/-/jua-5.0.20.tgz"
+  integrity sha512-FADY0I0Npcmc4VdeoYVfpbJIlMOenb6b2PMatl639S2LaOVAlWsLWxIE4GL9rNhctR1jok5yNQepBup5zaF02g==
+
 "@fractalwagmi/popup-connection@^1.0.18":
   version "1.1.1"
   resolved "https://registry.npmjs.org/@fractalwagmi/popup-connection/-/popup-connection-1.1.1.tgz"

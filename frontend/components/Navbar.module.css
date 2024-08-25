@@ -1,0 +1,97 @@
+.root {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  height: rem(60px);
+  padding-left: var(--mantine-spacing-md);
+  padding-right: var(--mantine-spacing-md);
+  border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+}
+
+.inner {
+  height: rem(60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  @media (max-width: $mantine-breakpoint-lg) {
+    display: none !important; 
+  }
+}
+
+.rightSection {
+  @media (max-width: $mantine-breakpoint-lg) {
+    display: none;
+  }
+}
+
+.burger {
+  @media (min-width: $mantine-breakpoint-lg) {
+    display: none;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: var(--mantine-spacing-md);
+  padding-right: var(--mantine-spacing-md);
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-weight: 500;
+  font-size: var(--mantine-font-size-sm);
+
+  @media (max-width: $mantine-breakpoint-lg) {
+    height: rem(42px);
+    width: 100%;
+  }
+
+  @mixin hover {
+    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  }
+}
+
+.linkIcon {
+  margin-right: var(--mantine-spacing-sm);
+}
+
+.toggleButton {
+  background-color: var(--mantine-color-indigo-9);
+  color: var(--mantine-color-white);
+}
+
+.toggleButton:hover {
+  background-color: var(--mantine-color-indigo-8);
+}
+
+.dropdown {
+  position: absolute;
+  top: rem(60px);
+  left: 0;
+  right: 0;
+  z-index: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-width: 0;
+  overflow: hidden;
+
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  padding: var(--mantine-spacing-md);
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    display: none;
+    heihht: 0;
+  }
+}

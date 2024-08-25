@@ -7,16 +7,16 @@ import { FeaturesTitle } from "../../components/root/FeaturesImages";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-              <Image
-                radius="md"
-                style={{ width: "100%"}}
-                h={400}
-                src="./haiwanlab.jpg"
-              />
-              <div style={{margin: "5%"}}>
-      <HeroSection />
-      <FeaturesTitle />
-              </div>
+      <Image
+        radius="md"
+        style={{ width: "100%" }}
+        h={window.innerWidth < 768 ? 400 : 600}
+        src="./haiwanlab.jpg"
+      />
+      <div style={{ margin: "5%" }}>
+        <HeroSection />
+        <FeaturesTitle />
+      </div>
     </main>
   );
 }
