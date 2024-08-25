@@ -57,9 +57,9 @@ export function FeaturesTitle() {
           stroke={1.5}
         />
       </ThemeIcon>
-      <Text fz="xl" mt="sm" fw={500}>
+      <Title order={2} mt={"sm"}>
         {feature.title}
-      </Text>
+      </Title>
       <Text c="dimmed" fz="md">
         {feature.description}
       </Text>

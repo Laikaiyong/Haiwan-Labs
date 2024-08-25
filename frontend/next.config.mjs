@@ -6,6 +6,7 @@ const nextConfig = {
             'images.unsplash.com',
             'upload.wikimedia.org',
             'www.naturalcore.co',
+            'play-lh.googleusercontent.com'
         ]
     }
 };

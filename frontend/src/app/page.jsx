@@ -19,7 +19,7 @@ export default function Home() {
         <FeaturesTitle />
         <Group style={{textAlign: "center", justifyContent: "center"}}>
             <Title className={classes.title} order={2}>
-              Build on Solana
+              Built on Solana
             </Title>
             <Image
               w={35}

@@ -10,7 +10,7 @@ import { IconShoppingCart, IconLeaf } from '@tabler/icons-react';
 const companies = [
   { value: 'aeon', label: 'AEON', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/AeonLogo.svg/510px-AeonLogo.svg.png' },
   { value: 'jaya', label: 'Jaya Grocer', image: 'https://upload.wikimedia.org/wikipedia/en/0/0d/Jaya_Grocer_logo.png' },
-  { value: 'sogo', label: 'Sogo', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sogo_logo.svg/240px-Sogo_logo.svg.png' },
+  { value: 'lotus', label: 'Lotus', image: 'https://play-lh.googleusercontent.com/_hj7TTfgnCg2EVqla_usxGQIBhMwWRWqHVfHHJxJkFC87O6vRsKKcjA5KAGTgvkIm5I' },
 ];
 
 const surplusFood = {
@@ -24,7 +24,7 @@ const surplusFood = {
     { id: 2, name: 'Yogurt', quantity: '30 cups', expiryDate: '2023-08-26', price: 'RM 1.50/cup' },
     { id: 3, name: 'Chicken', quantity: '10 kg', expiryDate: '2023-08-25', price: 'RM 8.00/kg' },
   ],
-  sogo: [
+  lotus: [
     { id: 1, name: 'Tomatoes', quantity: '8 kg', expiryDate: '2023-08-26', price: 'RM 3.00/kg' },
     { id: 2, name: 'Eggs', quantity: '10 trays', expiryDate: '2023-09-05', price: 'RM 10.00/tray' },
     { id: 3, name: 'Fish', quantity: '5 kg', expiryDate: '2023-08-25', price: 'RM 15.00/kg' },
