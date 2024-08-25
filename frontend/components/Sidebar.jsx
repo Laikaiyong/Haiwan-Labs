@@ -104,7 +104,7 @@ function Toggle({ userRole, setUserRole }) {
       color="indigo"
       onClick={handleRoleChange}
       className={classes.toggleButton}
-      leftIcon={userRole === "User" ? <IconUser size={20} /> : <IconBuildingFactory2 size={20} />}
+      lefticon={userRole === "User" ? <IconUser size={20} /> : <IconBuildingFactory2 size={20} />}
     >
       {userRole}
     </Button>

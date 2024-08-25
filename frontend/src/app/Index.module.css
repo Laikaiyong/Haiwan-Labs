@@ -1,0 +1,5 @@
+.title {
+    font-weight: 900;
+    font-size: calc(2.25rem * var(--mantine-scale));
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  }

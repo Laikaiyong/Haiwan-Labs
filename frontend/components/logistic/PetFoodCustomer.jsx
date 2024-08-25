@@ -1,8 +1,12 @@
 import React, { useMemo } from 'react';
-import { Tabs, Card, Text, Button, Group, Image, Grid } from '@mantine/core';
+import { Tabs, Card, Text, Button, Group, Image, Grid, Accordion, Table, ThemeIcon, Badge } from '@mantine/core';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl, PublicKey, Transaction, SystemProgram, LAMPORTS_PER_SOL } from '@solana/web3.js';
+import { 
+    IconMeat, IconTestPipe, IconPackage, IconTruck, 
+    IconCheck, IconClock, IconHash
+  } from '@tabler/icons-react';
 
 // Make sure to import the required CSS
 import '@solana/wallet-adapter-react-ui/styles.css';
@@ -20,6 +24,19 @@ const petFoods = [
 const PetFoodCustomer = () => {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
+  const stages = [
+    { name: 'Processing', status: 'completed', txHash: '0x123...abc' },
+    { name: 'Testing', status: 'completed', txHash: '0x456...def' },
+    { name: 'Packaging', status: 'completed', txHash: '0x789...ghi' },
+    { name: 'Distribution', status: 'completed', txHash: '0xabc...123' },
+  ];
+
+  const stageIcons = {
+    Processing: IconMeat,
+    Testing: IconTestPipe,
+    Packaging: IconPackage,
+    Distribution: IconTruck,
+  };
 
   const handleSolanaTransaction = async (amount, recipient = RETAILER_WALLET) => {
     if (!publicKey) {
@@ -56,6 +73,51 @@ const PetFoodCustomer = () => {
                   </Card.Section>
                   <Text weight={500} mt="md">{food.name}</Text>
                   <Text size="sm" c="dimmed">{food.sol} SOL</Text>
+                  <Accordion variant="contained" radius="md" mt="md">
+        <Accordion.Item value="manufacturing-stages">
+          <Accordion.Control>Manufacturing Stages</Accordion.Control>
+          <Accordion.Panel>
+            <Table>
+              <Table.Thead>
+                <Table.Tr>
+                  <Table.Th>Stage</Table.Th>
+                  <Table.Th>Status</Table.Th>
+                  <Table.Th>Blockchain Transaction</Table.Th>
+                </Table.Tr>
+              </Table.Thead>
+              <Table.Tbody>
+                {stages.map((stage, index) => (
+                  <Table.Tr key={index}>
+                    <Table.Td>
+                      <Group>
+                        <ThemeIcon color={getStatusColor(stage.status)} size={24} radius="xl">
+                          {React.createElement(stageIcons[stage.name], { size: '1rem' })}
+                        </ThemeIcon>
+                        {stage.name}
+                      </Group>
+                    </Table.Td>
+                    <Table.Td>
+                      <Badge color={getStatusColor(stage.status)}>
+                        {formatStatus(stage.status)}
+                      </Badge>
+                    </Table.Td>
+                    <Table.Td>
+                      {stage.txHash ? (
+                        <Group>
+                          <IconHash size={16} />
+                          <Text size="sm">{stage.txHash}</Text>
+                        </Group>
+                      ) : (
+                        'Pending'
+                      )}
+                    </Table.Td>
+                  </Table.Tr>
+                ))}
+              </Table.Tbody>
+            </Table>
+          </Accordion.Panel>
+        </Accordion.Item>
+      </Accordion>
                   <Button color='indigo' onClick={() => handleSolanaTransaction(food.sol)} fullWidth mt="sm">
                     Buy Now
                   </Button>
@@ -73,3 +135,21 @@ const PetFoodCustomer = () => {
 };
 
 export default PetFoodCustomer;
+
+function getStatusColor(status) {
+    switch (status.toLowerCase()) {
+      case 'completed':
+        return 'green';
+      case 'in progress':
+      case 'in_progress':
+        return 'blue';
+      case 'testing':
+        return 'yellow';
+      default:
+        return 'gray';
+    }
+  }
+  
+  function formatStatus(status) {
+    return status.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  }

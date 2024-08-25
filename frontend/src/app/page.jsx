@@ -1,8 +1,9 @@
 'use client';
 
 import { HeroSection } from "../../components/root/HeroSection";
-import { Image } from '@mantine/core';
+import { Image, Title, Group } from '@mantine/core';
 import { FeaturesTitle } from "../../components/root/FeaturesImages";
+import classes from './Index.module.css';
 
 export default function Home() {
   return (
@@ -10,12 +11,21 @@ export default function Home() {
       <Image
         radius="md"
         style={{ width: "100%" }}
-        h={typeof window !== 'undefined' && window.innerWidth < 768 ? 400 : 600}
+        h={800}
         src="./haiwanlab.jpg"
       />
       <div style={{ margin: "5%" }}>
         <HeroSection />
         <FeaturesTitle />
+        <Group style={{textAlign: "center", justifyContent: "center"}}>
+            <Title className={classes.title} order={2}>
+              Build on Solana
+            </Title>
+            <Image
+              w={35}
+              src="https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png"
+            />
+          </Group>
       </div>
     </main>
   );
