@@ -3,3 +3,25 @@
     font-size: calc(2.25rem * var(--mantine-scale));
     color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   }
+
+.responsiveImage {
+    height: 400px; /* small screen */
+}
+
+@media (min-width: 600px) {
+    .responsiveImage {
+        height: 600px; /* medium screen */
+    }
+}
+
+@media (min-width: 800px) {
+    .responsiveImage {
+        height: 800px; /* big screen */
+    }
+}
+
+@media (min-width: 1000px) {
+    .responsiveImage {
+        height: 1000px; /* large screen */
+    }
+}

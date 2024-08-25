@@ -17,10 +17,10 @@ const petFoodData = [
     ingredients: 'Surplus chicken, rice, vegetables',
     status: 'Completed',
     stages: [
-      { name: 'Processing', status: 'completed', txHash: '0x123...abc' },
-      { name: 'Testing', status: 'completed', txHash: '0x456...def' },
-      { name: 'Packaging', status: 'completed', txHash: '0x789...ghi' },
-      { name: 'Distribution', status: 'completed', txHash: '0xabc...123' },
+      { name: 'Processing', status: 'completed', txHash: '2G1S3...abc' },
+      { name: 'Testing', status: 'completed', txHash: '4mx45...def' },
+      { name: 'Packaging', status: 'completed', txHash: '5K7a9...ghi' },
+      { name: 'Distribution', status: 'completed', txHash: '1xabc...123' },
     ],
   },
   {
@@ -29,8 +29,8 @@ const petFoodData = [
     ingredients: 'Surplus fish, sweet potatoes, peas',
     status: 'In Progress',
     stages: [
-      { name: 'Processing', status: 'completed', txHash: '0xdef...456' },
-      { name: 'Testing', status: 'completed', txHash: '0xghi...789' },
+      { name: 'Processing', status: 'completed', txHash: '5xdef...456' },
+      { name: 'Testing', status: 'completed', txHash: '3xghi...789' },
       { name: 'Packaging', status: 'in_progress', txHash: null },
       { name: 'Distribution', status: 'pending', txHash: null },
     ],
@@ -41,7 +41,7 @@ const petFoodData = [
     ingredients: 'Surplus vegetables, lentils, brown rice',
     status: 'Testing',
     stages: [
-      { name: 'Processing', status: 'completed', txHash: '0xjkl...012' },
+      { name: 'Processing', status: 'completed', txHash: '9Jjkl...012' },
       { name: 'Testing', status: 'in_progress', txHash: null },
       { name: 'Packaging', status: 'pending', txHash: null },
       { name: 'Distribution', status: 'pending', txHash: null },

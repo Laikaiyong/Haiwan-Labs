@@ -25,10 +25,10 @@ const PetFoodCustomer = () => {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
   const stages = [
-    { name: 'Processing', status: 'completed', txHash: '0x123...abc' },
-    { name: 'Testing', status: 'completed', txHash: '0x456...def' },
-    { name: 'Packaging', status: 'completed', txHash: '0x789...ghi' },
-    { name: 'Distribution', status: 'completed', txHash: '0xabc...123' },
+    { name: 'Processing', status: 'completed', txHash: '2G1S3...abc' },
+    { name: 'Testing', status: 'completed', txHash: '4mx45...def' },
+    { name: 'Packaging', status: 'completed', txHash: '5K7a9...ghi' },
+    { name: 'Distribution', status: 'completed', txHash: '1xabc...123' },
   ];
 
   const stageIcons = {
