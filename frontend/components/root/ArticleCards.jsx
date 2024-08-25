@@ -48,7 +48,7 @@ const mockdata = [
 ];
 
 export function FeaturesAsymmetrical() {
-  const items = mockdata.map((item) => <ArticleCardImage {...item} />);
+  const items = mockdata.map((item) => <ArticleCardImage key={item.key} {...item} />);
 
   return (
     <Container mt={30} mb={30} mx={50} size="xl">
