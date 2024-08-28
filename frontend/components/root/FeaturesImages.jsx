@@ -96,7 +96,7 @@ export function FeaturesTitle() {
                       <Title className={classes.title} style={{ margin: "3rem" }} order={2}>
               What We Do
             </Title>
-        <SimpleGrid style={{ margin: "7rem" }} cols={{ base: 1, sm: 3 }} spacing={{base: 0, sm: 50}}>
+        <SimpleGrid mx={50} cols={{ base: 1, sm: 3 }} spacing={{base: 0, sm: 50}}>
           {items}
         </SimpleGrid>
       </Container>
