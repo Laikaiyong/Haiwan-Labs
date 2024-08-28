@@ -70,7 +70,6 @@ export function ResponsiveNavbar() {
             <Group className={`${classes.rightSection}, ${classes.links}`}>
               <Toggle userRole={userRole} setUserRole={setUserRole} />
               <WalletMultiButton />
-              <WalletDisconnectButton />
             </Group>
             <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
           </div>
@@ -83,7 +82,6 @@ export function ResponsiveNavbar() {
             <Group mt="md">
               <Toggle userRole={userRole} setUserRole={setUserRole} />
               <WalletMultiButton />
-              <WalletDisconnectButton />
             </Group>
           </div>
         </Collapse>
